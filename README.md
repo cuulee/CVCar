@@ -1,8 +1,9 @@
-## AutoRCCar
+## CVCar Project ###
+All original code (C) Lachlan Bell & CodysCodes
+Based off AutoRCCar by Wang Zheng (Hamuchiwa)
 
-[See self-driving in action (Youtube)](https://youtu.be/BBwEF6WBUQs)
 
-  A scaled down version of self-driving system using a RC car, Raspberry Pi, Arduino and open source software. The system uses a Raspberry Pi with a camera and an ultrasonic sensor as inputs, a processing computer that handles steering, object recognition (stop sign and traffic light) and distance measurement, and an Arduino board for RC car control.
+  A scaled down version of self-driving system using a RC car, Raspberry Pi, Arduino and open source software. The system uses a Raspberry Pi with a camera and an ultrasonic sensor as inputs and relays computer's commands to Arduino, a processing computer that handles steering, object recognition (stop sign and traffic light) and distance measurement, and an Arduino board for RC car control.
   
 ### Dependencies
 * Raspberry Pi: 
@@ -14,11 +15,12 @@
   - PiSerial
   
 ### About
-- raspberrt_pi/ 
+- raspberry_pi/ 
   -	***stream_client.py***: stream video frames in jpeg format to the host computer
   -	***ultrasonic_client.py***: send distance data measured by sensor to the host computer
+  -	***serial_client.py***: Receives vehicle control commands from host computer via TCP and relays them to the Arduino
 - arduino/
-  -	***rc_keyboard_control.ino***: acts as a interface between rc controller and computer and allows user to send command via USB serial interface
+  -	***hbridge.ino***: acts as a interface between host computer (relayed via Raspberry Pi) and H-Bridge motor controller.
 - computer/
   -	cascade_xml/ 
     - trained cascade classifiers xml files
