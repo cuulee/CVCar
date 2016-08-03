@@ -1,4 +1,6 @@
 Copyright (c) 2015, hamuchiwa
+
+Copyright (c) 2016, lachlanbell (all additions)
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
