@@ -23,6 +23,7 @@ Based off AutoRCCar by Wang Zheng (Hamuchiwa)
   -	***serial_client.py***: Receives vehicle control commands from host computer via TCP and relays them to the Arduino
 - arduino/
   -	***hbridge.ino***: acts as a interface between host computer (relayed via Raspberry Pi) and H-Bridge motor controller.
+  -	***KeypadTrafficLight.ino***: not necessary, for controlling a traffic light for RasPi car. Probably will change to network control in the near future.
 - computer/
   -	cascade_xml/ 
     - trained cascade classifiers xml files
