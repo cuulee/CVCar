@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 import time 
+import serial
 GPIO.setmode(GPIO.BCM)
 
 TRIG = 23
@@ -9,6 +10,8 @@ print "Distnace measurements in progress"
 
 GPIO.setup(TRIG,GPIO.OUT)
 GPIO.setup(ECHO,GPIO.IN)
+
+ser = serial.Serial('dev/tty*', 9600)
 
 GPIO.output(TRIG,False)
 print "Waiting for sensor to settle"
@@ -32,3 +35,6 @@ distance = round(distance,2)
 print "distance",distance,"cm"
 
 GPIO.cleanup()
+
+if distance < 10 and distance != 0:
+  ser.write('n')
