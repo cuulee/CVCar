@@ -71,6 +71,10 @@ void loop() {
     } else {
       reset();
     }
+    
+    if (command == 'n') {
+      reset();
+    }
   }
   else{
     reset();
